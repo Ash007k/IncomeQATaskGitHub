@@ -16,6 +16,11 @@
         <rest.version>4.4.0</rest.version>
         <gson.version>2.8.8</gson.version>
         <dotenv.version>5.2.2</dotenv.version>
+        <selenide.version>5.23.2</selenide.version>
+        <cucumber.version>6.11.0</cucumber.version>
+        <junit.version>4.13.2</junit.version>
+        <surefire.version>2.22.2</surefire.version>
+        <slf4j.version>1.7.32</slf4j.version>
     </properties>
 
     <build>
@@ -26,6 +31,16 @@
                 <version>3.0.0</version>
                 <configuration>
                     <mainClass>Applications.Main</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <selenide.browser>chrome</selenide.browser>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
@@ -46,6 +61,35 @@
             <groupId>io.github.cdimascio</groupId>
             <artifactId>java-dotenv</artifactId>
             <version>${dotenv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java8</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
