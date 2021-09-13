@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  gitApp:
+    image: ash007ok/maven_chrome_firefox_edge
+    working_dir: /suite
+    volumes:
+      - .:/suite
+    command:
+      - mvn compile exec:java "-Dexec.args=torvalds,ash007ok,ash007k"
+  
+  chrome:
+    image: ash007ok/maven_chrome_firefox_edge
+    working_dir: /suite
+    volumes:
+      - .:/suite
+    command:
+      - mvn test "-Dselenide.browser=chrome" "-Dselenide.headless=true"
