@@ -41,4 +41,5 @@ public class GitDetails {
         this.repos = repos;
     }
 
+    public List<Repos> getRepos() { return repos; }
 }

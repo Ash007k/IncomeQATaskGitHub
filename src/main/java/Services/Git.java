@@ -44,6 +44,10 @@ public class Git {
         return getResponse(API_URL + "/users/" + username + "/repos?per_page=" + REPO_PER_PAGE);
     }
 
+    public static Response getRepoDetails(String username, String repoName) {
+        return getResponse(API_URL + "/repos/" + username + "/" + repoName);
+    }
+
     private static int getReleaseCount(String username, String repoName) {
         return getResponse(API_URL + "/repos/" + username +"/"+repoName+"/releases").jsonPath().getList("$").size();
     }
