@@ -1,0 +1,24 @@
+name: Income QA Task 2 - GitHub UI Star
+
+on:
+  push:
+    branches: [ feature/qa_made_yours ]
+    
+  pull_request:
+    branches: [ feature/qa_made_yours ]
+
+  workflow_dispatch:
+
+jobs:          
+  ChromeRegression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Chrome - All features
+        run: docker-compose up chrome
+        
+      - name: Chrome - Cucumber Test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Chrome Cucumber - reports
+          path: reports/*
