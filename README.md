@@ -8,6 +8,9 @@ The solution is designed using Java 8, Rest Assured, POJO, Maven to make call Gi
 **For Task 2 - GitHub UI - Star count validation:**
 The solution is designed using Java 8, Cucumber (BDD Framework), Selenium WebDriver with wrapper to initiate WebDriver, naviagte to required repo and validate star values in format k by calling Task 1 API.
 
+**For Task 3:**
+Branch name is created as `feature/qa_mad_yours`, apart from Git hygiene practice also enabled GitHub Actions for the purpose of demo/showcase to view the execution in real-time.
+
 ### Development tools and others
 Below are the tools and library used for the development
 
@@ -45,7 +48,9 @@ mvn compile exec:java
 ```
 
 After running above command, user has to input GitHub username and Enter (comma separated for more than 1).
+
 Example: 
+
 ![image](https://user-images.githubusercontent.com/89639359/133173391-cf00690d-b024-4d6c-84f4-b4b1b3c16717.png)
 
 ![image](https://user-images.githubusercontent.com/89639359/133173428-2d2f9c65-cccf-4027-bdea-5f7b1a5bec4c.png)
@@ -145,3 +150,23 @@ stepDefinitions: [src/test/java/stepDefinitions](https://github.com/Ash007k/Inco
 Page object: [src/test/java/Pages/Git.java](https://github.com/Ash007k/IncomeQATaskGitHub/tree/feature/qa_made_yours/src/test/java/Pages)
 
 results: reports/cucumber-html-report.html
+
+### Showcase
+For the purpose of demo/showcase the Task 1 and 2, have enabled the GitHub Actions Continous Integration.
+
+![image](https://user-images.githubusercontent.com/89639359/133203448-d1fc1df1-b050-47a4-823f-5ccdf5b912a2.png)
+
+
+Task 1: 
+
+![image](https://user-images.githubusercontent.com/89639359/133203322-34b497b8-d8fc-4f75-b177-faa080fc49ac.png)
+
+
+Task 2:
+
+![image](https://user-images.githubusercontent.com/89639359/133203517-e44e95fe-9566-4483-9156-8fb63025cb97.png)
+
+
+
+
+
