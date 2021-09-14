@@ -45,19 +45,42 @@ mvn compile exec:java
 ```
 
 After running above command, user has to input GitHub username and Enter (comma separated for more than 1).
+Example: 
+![image](https://user-images.githubusercontent.com/89639359/133173391-cf00690d-b024-4d6c-84f4-b4b1b3c16717.png)
+
+![image](https://user-images.githubusercontent.com/89639359/133173428-2d2f9c65-cccf-4027-bdea-5f7b1a5bec4c.png)
+
+or
+
+![image](https://user-images.githubusercontent.com/89639359/133173477-e2f858cc-e892-4375-877d-95b689654537.png)
 
 
 Application will show user details along with Repo details.
+Example:
+
+![image](https://user-images.githubusercontent.com/89639359/133173566-53994518-8b83-44e5-ad5b-c95a942734a0.png)
+
+For more than one username
+
+![image](https://user-images.githubusercontent.com/89639359/133173809-bd1f5775-f00d-4eff-9185-8656972a4d80.png)
+
 
 
 At the end will ask confirmation to continue with y/N (default N), if no value or N provided will terminate the application; otherwise will ask to input GitHub user details again to show details.
 
+![image](https://user-images.githubusercontent.com/89639359/133173881-09dafac0-31ae-4771-a044-f0b7fe4c5e3c.png)
+
 
 In case if no repo found, will show `No Repository Available`
+
+![image](https://user-images.githubusercontent.com/89639359/133173918-05f85e85-5884-45de-84ca-90ed615ec7f2.png)
 
 
 if wrong/invalid GitHub user details given will show `Not Found`
 
+![image](https://user-images.githubusercontent.com/89639359/133173949-fc75574e-8d38-4759-b0b8-4635fb0df966.png)
+
+#### Setting GITHUB ACCESS TOKEN - Avoid rate limit
 
 Please note due to GitHub API call rate limitation, only 60 request/per hour is allowed as anonymous user, and the application will show below Warning and will terminate the application when limit issue occur with message.  
 `WARNING: Please consider adding GITHUB TOKEN to void rate limit, default 60
@@ -67,6 +90,7 @@ Please follow below steps to generate access token.
 https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
 And add in Environment Variable as `GITHUB_TOKEN`
 
+#### Run App with CLI input
 
 The Application also support CLI parameter to directly show GitHub details without any user input during the run.
 Run:
@@ -77,11 +101,16 @@ mvn compile exec:java "-Dexec.args=torvalds,ash007ok,ash007k"
 [Please note by default, 30 repo details will be showed, in case wanted to change need to update `src/test/resources/config.properties`, max 100 allowed]
 
 Directory Structure:
+
 The Solution for the Application located in `src/main/java`
-Main/ initiate class: src/main/java/Applications/Main.java
-Pojo: src/main/java/Pojo
-Git Services: src/main/java/Services/Git.java
-Config: src/test/resources/config.properties
+
+Main/ initiate class: [src/main/java/Applications/Main.java](https://github.com/Ash007k/IncomeQATaskGitHub/blob/feature/qa_made_yours/src/main/java/Applications/Main.java)
+
+Pojo: [src/main/java/Pojo](https://github.com/Ash007k/IncomeQATaskGitHub/tree/feature/qa_made_yours/src/main/java/Pojo)
+
+Git Services: [src/main/java/Services/Git.java](https://github.com/Ash007k/IncomeQATaskGitHub/blob/feature/qa_made_yours/src/main/java/Services/Git.java)
+
+Config: [src/test/resources/config.properties](https://github.com/Ash007k/IncomeQATaskGitHub/blob/feature/qa_made_yours/src/test/resources/config.properties)
 
 ### Steps to run Task 2 - GitHub UI Star Validation
 1. After cloning or downloading repo navigate to corresponding directory
@@ -100,8 +129,19 @@ The test reports are created in `reports/cucumber-html-report.html`
 
 Sample Test result:
 
+![image](https://user-images.githubusercontent.com/89639359/133174453-95088c20-e027-4ca0-bc75-d887814eacdd.png)
 
-Feature file: src/test/resources/features/GitUiRepoStar.feature
-stepDefinitions: src/test/java/stepDefinitions
-Page object: src/test/java/Pages/Git.java
+Feature file:
+
+![image](https://user-images.githubusercontent.com/89639359/133174674-27c10f6f-6b42-47d8-b568-598f0fef0930.png)
+
+
+The Solution for the Automation located in `src/main/test`
+
+Feature file: [src/test/resources/features/GitUiRepoStar.feature](https://github.com/Ash007k/IncomeQATaskGitHub/blob/feature/qa_made_yours/src/test/resources/features/GitUiRepoStar.feature)
+
+stepDefinitions: [src/test/java/stepDefinitions](https://github.com/Ash007k/IncomeQATaskGitHub/tree/feature/qa_made_yours/src/test/java/stepDefinitions)
+
+Page object: [src/test/java/Pages/Git.java](https://github.com/Ash007k/IncomeQATaskGitHub/tree/feature/qa_made_yours/src/test/java/Pages)
+
 results: reports/cucumber-html-report.html
