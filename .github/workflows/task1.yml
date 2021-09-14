@@ -1,0 +1,18 @@
+name: Income QA Task 1 - GitHub CLI
+
+on:
+  push:
+    branches: [ feature/qa_made_yours ]
+    
+  pull_request:
+    branches: [ feature/qa_made_yours ]
+
+  workflow_dispatch:
+
+jobs:          
+  gitApp:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: GitHub API CLI Application
+          run: docker-compose up gitApp
